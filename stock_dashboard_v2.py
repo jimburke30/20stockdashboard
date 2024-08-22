@@ -227,7 +227,7 @@ class PortfolioApp:
         st.header("Year-to-Date Performance Metrics")
         
         # Prepare data for area and line charts
-        combined_returns, max_values = self.calculate_combined_performance()# * 100
+        combined_returns, max_values = self.calculate_combined_performance() * 100
         sp500_returns = self.sp_and_nasdaq.data[self.sp_and_nasdaq.benchmark].pct_change().cumsum() * 100
         # Date slider
         date_range = st.slider("Select Date Range", min_value=self.BOY.date(), max_value=self.selected_date, value=(self.BOY.date(), self.selected_date))
