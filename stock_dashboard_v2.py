@@ -124,7 +124,7 @@ class PortfolioApp:
 
         combined_returns = combined_data.pct_change().mean(axis=1)
         cumulative_combined_returns = (1 + combined_returns).cumprod() - 1
-        return cumulative_combined_returns, max_value_and_date
+        return cumulative_combined_returns
     
     def make_tabs(self, portfolio, start_date, end_date):
         st.dataframe(portfolio.data)
@@ -227,7 +227,7 @@ class PortfolioApp:
         st.header("Year-to-Date Performance Metrics")
         
         # Prepare data for area and line charts
-        combined_returns, max_values = self.calculate_combined_performance() * 100
+        combined_returns = self.calculate_combined_performance() * 100
         sp500_returns = self.sp_and_nasdaq.data[self.sp_and_nasdaq.benchmark].pct_change().cumsum() * 100
         # Date slider
         date_range = st.slider("Select Date Range", min_value=self.BOY.date(), max_value=self.selected_date, value=(self.BOY.date(), self.selected_date))
