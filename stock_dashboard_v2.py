@@ -197,7 +197,7 @@ class PortfolioApp:
         st.altair_chart(chart, use_container_width=True)
 
     def run(self):
-        st.title("Jim Burke's Portfolio App")
+        st.title("20 Stock Portfolio App")
         st.markdown("### Current Week Performance")
         st.write(f"Sharpe Ratio (Current Portfolio): {self.portfolio_3.calculate_sharpe_ratio():.2f}")
         st.write(f"Standard Deviation (Current Portfolio): {self.portfolio_3.calculate_std_dev():.2f}")
