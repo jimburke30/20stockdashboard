@@ -1,0 +1,6 @@
+pandas==2.0.3
+yfinance==0.2.40
+numpy==1.23.3
+altair==4.1.0
+streamlit-tags==1.2.8
+matplotlib==3.4.2
